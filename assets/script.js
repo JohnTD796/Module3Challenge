@@ -7,17 +7,15 @@ const collectEmployees = function() {
   
   let addEmployee = true
   let employeeInfo = []
-
+  
   while (addEmployee){
     
     let uFirstName = window.prompt("What is your first name?")
-    if(!uFirstName){
-      // return;
+    if(!uFirstName){ 
     }
 
     let uLastName = window.prompt("What is your last name?")
     if (!uLastName){
-      // return;
     }
 
     let uSalary = window.prompt("what is your salary?")
@@ -27,19 +25,19 @@ const collectEmployees = function() {
     }
     
     if (!uSalary){
-      // return;
     }
     
     addEmployee = window.confirm("Do you want to add another employee?")
   
- const employeeData = {
-  firstName: uFirstName,
-  lastName: uLastName,
-  salary: uSalary
+    const employeeData = {
+    firstName: uFirstName,
+    lastName: uLastName,
+    salary: uSalary
  }
 
- employeeInfo.push(employeeData)
+    employeeInfo.push(employeeData)
   }
+
   return employeeInfo
 }
 
@@ -50,12 +48,26 @@ const employeesArray = []
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
   // TODO: Calculate and display the average salary
+  let sum = 0
+  for (let i = 0; i < employeesArray.length; i++) {
+    sum += +employeesArray[i].salary;
+    
+  }
+  let average = sum / employeesArray.length
+  console.log(`The average employee salary between our ${employeesArray.length}, employee(s) is ${average}`)
 }
+
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
+let randomNum = Math.floor(Math.random()*employeesArray.length)
+let randomEmployee = employeesArray[randomNum]
+console.log(`Congratulations to ${randomEmployee.firstName} ${randomEmployee.lastName}, our random drawing winner!`)
 }
+
+
+
 
 /*
   ====================
