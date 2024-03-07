@@ -32,7 +32,7 @@ const collectEmployees = function() {
     const employeeData = {
     firstName: uFirstName,
     lastName: uLastName,
-    salary: uSalary
+    salary: parseFloat(uSalary)
  }
 
     employeeInfo.push(employeeData)
@@ -54,7 +54,7 @@ const displayAverageSalary = function(employeesArray) {
     
   }
   let average = sum / employeesArray.length
-  console.log(`The average employee salary between our ${employeesArray.length}, employee(s) is ${average}`)
+  console.log(`The average employee salary between our ${employeesArray.length}, employee(s) is $${average.toFixed(2)}`)
 }
 
 
